@@ -2,8 +2,10 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
         "config:base",
+        ":rebaseStalePrs",
+        ":gitSignOff",
         "github>USA-RedDragon/renovate-configs:labels",
-        "github>USA-RedDragon/renovate-configs:actions"
+        "github>USA-RedDragon/renovate-configs:automerge-all-but-major"
     ],
     "ignorePresets": [
         ":prHourlyLimit2"
