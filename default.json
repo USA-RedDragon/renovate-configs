@@ -4,6 +4,8 @@
         "config:base",
         ":rebaseStalePrs",
         ":gitSignOff",
+        ":rebaseStalePrs",
+        ":disableRateLimiting",
         "docker:enableMajor",
         "github>USA-RedDragon/renovate-configs:labels",
         "github>USA-RedDragon/renovate-configs:automerge-all-but-major"
