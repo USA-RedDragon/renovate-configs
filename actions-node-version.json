@@ -1,0 +1,15 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "regexManagers": [
+        {
+            "fileMatch": [
+                "(^|/)\\.github\\/workflows\\/.*\\.ya?ml$"
+            ],
+            "matchStrings": [
+                "node-version: \"(?<currentValue>.*?)\"\\n"
+            ],
+            "depNameTemplate": "node",
+            "datasourceTemplate": "docker"
+        }
+    ]
+}
