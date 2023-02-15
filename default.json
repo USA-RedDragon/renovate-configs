@@ -1,0 +1,14 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:base",
+        "github>USA-RedDragon/renovate-configs:labels",
+        "github>USA-RedDragon/renovate-configs:actions"
+    ],
+    "ignorePresets": [
+        ":prHourlyLimit2"
+    ],
+    "automergeType": "pr",
+    "platformAutomerge": true,
+    "transitiveRemediation": true
+}
