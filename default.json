@@ -13,6 +13,7 @@
     "ignorePresets": [
         ":prHourlyLimit2"
     ],
+    "rebaseWhen": "never",
     "automergeType": "pr",
     "platformAutomerge": true,
     "transitiveRemediation": true,
