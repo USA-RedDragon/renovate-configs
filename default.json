@@ -15,5 +15,6 @@
     ],
     "automergeType": "pr",
     "platformAutomerge": true,
-    "transitiveRemediation": true
+    "transitiveRemediation": true,
+    "rangeStrategy": "bump"
 }
