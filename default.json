@@ -14,6 +14,10 @@
     "ignorePresets": [
         ":prHourlyLimit2"
     ],
+    "kubernetes": {
+        "enabled": true,
+        "fileMatch": ["\\.ya?ml$"]
+    },
     "rebaseWhen": "auto",
     "automergeType": "pr",
     "platformAutomerge": true,
