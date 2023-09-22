@@ -11,6 +11,9 @@
         "github>USA-RedDragon/renovate-configs:labels",
         "github>USA-RedDragon/renovate-configs:automerge-all-but-major"
     ],
+    "assignees": [
+        "USA-RedDragon"
+    ],
     "ignorePresets": [
         ":prHourlyLimit2"
     ],
