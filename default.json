@@ -11,6 +11,7 @@
         "github>USA-RedDragon/renovate-configs:labels",
         "github>USA-RedDragon/renovate-configs:automerge-all-but-major"
     ],
+    "timezone": "America/Chicago",
     "assignees": [
         "USA-RedDragon"
     ],
