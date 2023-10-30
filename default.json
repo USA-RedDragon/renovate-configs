@@ -15,6 +15,16 @@
     "assignees": [
         "USA-RedDragon"
     ],
+    "packageRules": [
+        {
+            "matchUpdateTypes": [
+                "major",
+                "minor"
+            ],
+            "automerge": false,
+            "matchPackagePatterns": ["python"]
+        }
+    ],
     "ignorePresets": [
         ":prHourlyLimit2"
     ],
