@@ -12,6 +12,7 @@
         "github>USA-RedDragon/renovate-configs:automerge-all-but-major"
     ],
     "timezone": "America/Chicago",
+    "assignAutomerge": true,
     "assignees": [
         "USA-RedDragon"
     ],
