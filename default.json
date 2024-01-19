@@ -28,11 +28,6 @@
             "matchDatasources": ["docker"],
             "matchPackageNames": ["ubuntu"],
             "versioning": "ubuntu"
-        },
-        {
-          "matchDatasources": ["docker"],
-          "matchPackageNames": ["python"],
-          "versioning": "pep440"
         }
     ],
     "ignorePresets": [
