@@ -15,6 +15,12 @@
     "assignees": [
         "USA-RedDragon"
     ],
+    "nix": {
+        "enabled": true
+    },
+    "lockFileMaintenance": {
+        "enabled": true
+    },
     "packageRules": [
         {
             "matchUpdateTypes": [
