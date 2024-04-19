@@ -11,6 +11,11 @@
             ],
             "rangeStrategy": "bump",
             "commitMessageTopic": "{{depName}}"
+        },
+        {
+          "matchManagers": ["gomod"],
+          "matchDepTypes": ["indirect"],
+          "enabled": true
         }
     ]
 }
