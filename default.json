@@ -55,6 +55,7 @@
           "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver-coerced{{/if}}"
       }
     ],
+    "separateMultipleMajor": true,
     "rebaseWhen": "auto",
     "automergeType": "pr",
     "platformAutomerge": true,
