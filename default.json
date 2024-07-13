@@ -35,6 +35,12 @@
             "matchDatasources": ["docker"],
             "matchPackageNames": ["ubuntu"],
             "versioning": "ubuntu"
+        },
+        {
+            "groupName": "os-packages",
+            "matchDatasources": [
+                "repology"
+            ]
         }
     ],
     "ignorePresets": [
