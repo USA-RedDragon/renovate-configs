@@ -43,6 +43,10 @@
             ]
         }
     ],
+    "registryAliases": {
+        "jacob.pub/ghcr.io": "ghcr.io",
+        "jacob.pub/docker.io": "docker.io"
+    },
     "ignorePresets": [
         ":prHourlyLimit2"
     ],
