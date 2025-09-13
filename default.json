@@ -45,7 +45,11 @@
     ],
     "registryAliases": {
         "jacob.pub/ghcr.io": "ghcr.io",
-        "jacob.pub/docker.io": "docker.io"
+        "jacob.pub/docker.io": "docker.io",
+        "jacob.pub/lscr.io": "lscr.io",
+        "jacob.pub/quay.io": "quay.io",
+        "jacob.pub/registry.k8s.io": "registry.k8s.io",
+        "jacob.pub/nvcr.io": "nvcr.io"
     },
     "ignorePresets": [
         ":prHourlyLimit2"
