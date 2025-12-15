@@ -8,6 +8,7 @@
         ":disableRateLimiting",
         "docker:enableMajor",
         "docker:pinDigests",
+        ":pinDependencies",
         "default:automergeDigest",
         "github>USA-RedDragon/renovate-configs:labels",
         "github>USA-RedDragon/renovate-configs:golang",
