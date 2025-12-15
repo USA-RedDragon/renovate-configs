@@ -9,6 +9,7 @@
         "docker:enableMajor",
         "docker:pinDigests",
         ":pinDependencies",
+        ":pinDevDependencies",
         "default:automergeDigest",
         "github>USA-RedDragon/renovate-configs:labels",
         "github>USA-RedDragon/renovate-configs:golang",
