@@ -21,6 +21,9 @@
     "assignees": [
         "USA-RedDragon"
     ],
+    "gitIgnoredAuthors": [
+      "234130638+github-actions[bot]@users.noreply.github.com"
+    ],
     "nix": {
         "enabled": true
     },
