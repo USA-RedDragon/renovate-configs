@@ -49,6 +49,11 @@
             "matchDatasources": [
                 "repology"
             ]
+        },
+        {
+            "description": "aws-sdk-go-v2 has ~87k tags; paging them over GitHub GraphQL for changelogs times out (502/504) and fails every run",
+            "matchSourceUrls": ["https://github.com/aws/aws-sdk-go-v2"],
+            "fetchChangeLogs": "off"
         }
     ],
     "registryAliases": {
