@@ -22,7 +22,9 @@
         "USA-RedDragon"
     ],
     "gitIgnoredAuthors": [
-      "234130638+github-actions[bot]@users.noreply.github.com"
+      "234130638+github-actions[bot]@users.noreply.github.com",
+      "234130638+usa-reddragon-auto-commit[bot]@users.noreply.github.com",
+      "usa-reddragon-auto-commit-bot[bot]@users.noreply.github.com"
     ],
     "nix": {
         "enabled": true
