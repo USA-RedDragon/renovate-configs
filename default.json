@@ -64,7 +64,11 @@
         "jacob.pub/lscr.io": "lscr.io",
         "jacob.pub/quay.io": "quay.io",
         "jacob.pub/registry.k8s.io": "registry.k8s.io",
-        "jacob.pub/nvcr.io": "nvcr.io"
+        "jacob.pub/nvcr.io": "nvcr.io",
+        "jacob.pub/docker.gitea.com": "docker.gitea.com",
+        "jacob.pub/git.scottlabs.io": "git.scottlabs.io",
+        "jacob.pub/gcr.io": "gcr.io",
+        "jacob.pub/reg.kyverno.io": "reg.kyverno.io"
     },
     "ignorePresets": [
         ":prHourlyLimit2"
