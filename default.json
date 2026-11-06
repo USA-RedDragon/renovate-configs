@@ -1,7 +1,7 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "config:base",
+        "config:recommended",
         "config:best-practices",
         ":gitSignOff",
         "docker:enableMajor",
@@ -50,7 +50,7 @@
             ],
             "automerge": false,
             "groupName": null,
-            "matchPackagePatterns": ["python"]
+            "matchPackageNames": ["/python/"]
         },
         {
             "description": "Infra repos: semver says little about deployed apps, so every update waits for a tick.",
@@ -114,12 +114,13 @@
     "prConcurrentLimit": 10,
     "kubernetes": {
         "enabled": true,
-        "fileMatch": ["\\.ya?ml$"]
+        "managerFilePatterns": ["/\\.ya?ml$/"]
     },
-    "regexManagers": [
+    "customManagers": [
       {
-          "fileMatch": [
-              ".*"
+          "customType": "regex",
+          "managerFilePatterns": [
+              "/.*/"
           ],
           "matchStrings": [
               "# renovate: datasource=(?<datasource>.*?)(?:\\s+extractVersion=(?<extractVersion>.+?))?(?:\\s+versioning=(?<versioning>.+?))?\\s+depName=(?<depName>.+?)?\\s(?:\\s*.*_?(?:version|VERSION)[:=]\\s*(?<currentValue>.*))?(?:\\s.*_(?:ref|REF)[:=]\\s*(?<currentDigest>.*))?"
@@ -131,6 +132,5 @@
     "rebaseWhen": "auto",
     "automergeType": "pr",
     "platformAutomerge": true,
-    "transitiveRemediation": true,
     "rangeStrategy": "bump"
 }
