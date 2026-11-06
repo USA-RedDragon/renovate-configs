@@ -3,19 +3,14 @@
     "extends": [
         "config:base",
         "config:best-practices",
-        ":rebaseStalePrs",
         ":gitSignOff",
-        ":rebaseStalePrs",
-        ":disableRateLimiting",
         "docker:enableMajor",
         ":pinDependencies",
         "group:recommended",
         "group:monorepos",
         "helpers:pinGitHubActionDigestsToSemver",
-        "default:automergeDigest",
         "github>USA-RedDragon/renovate-configs:labels",
-        "github>USA-RedDragon/renovate-configs:golang",
-        "github>USA-RedDragon/renovate-configs:automerge-all-but-major"
+        "github>USA-RedDragon/renovate-configs:golang"
     ],
     "timezone": "America/Chicago",
     "minimumReleaseAge": "24 hours",
@@ -36,12 +31,55 @@
     },
     "packageRules": [
         {
+            "description": "Code repos: one weekly group of routine updates, merged when CI passes.",
+            "matchUpdateTypes": ["minor", "patch", "pin", "pinDigest", "digest"],
+            "groupName": "all non-major",
+            "schedule": ["* 0-5 * * 6"],
+            "automerge": true
+        },
+        {
+            "description": "Major updates wait for a tick on the dependency dashboard.",
+            "matchUpdateTypes": ["major"],
+            "dependencyDashboardApproval": true,
+            "automerge": false
+        },
+        {
             "matchUpdateTypes": [
                 "major",
                 "minor"
             ],
             "automerge": false,
+            "groupName": null,
             "matchPackagePatterns": ["python"]
+        },
+        {
+            "description": "Infra repos: semver says little about deployed apps, so every update waits for a tick.",
+            "matchRepositories": ["USA-RedDragon/home-cluster-flux", "USA-RedDragon/home-cluster-sensitive", "USA-RedDragon/home-cluster-secrets", "USA-RedDragon/talos-configs", "USA-RedDragon/terraform"],
+            "groupName": null,
+            "schedule": ["at any time"],
+            "automerge": false,
+            "dependencyDashboardApproval": true
+        },
+        {
+            "description": "Infra repos: digest updates of a fixed tag still merge on their own.",
+            "matchRepositories": ["USA-RedDragon/home-cluster-flux", "USA-RedDragon/home-cluster-sensitive", "USA-RedDragon/home-cluster-secrets", "USA-RedDragon/talos-configs", "USA-RedDragon/terraform"],
+            "matchUpdateTypes": ["pin", "pinDigest", "digest"],
+            "dependencyDashboardApproval": false,
+            "automerge": true
+        },
+        {
+            "description": "Outside images with no usable version tags: a digest here is a real software change.",
+            "matchRepositories": ["USA-RedDragon/home-cluster-flux", "USA-RedDragon/home-cluster-sensitive", "USA-RedDragon/home-cluster-secrets", "USA-RedDragon/talos-configs", "USA-RedDragon/terraform"],
+            "matchPackageNames": ["/generic-device-plugin$/", "/linx-server$/", "/rtl_433_docker$/", "/jellyfin/jellyfin$/"],
+            "matchUpdateTypes": ["digest"],
+            "dependencyDashboardApproval": true,
+            "automerge": false
+        },
+        {
+            "description": "Wanted but quiet: routine updates once a month.",
+            "matchRepositories": ["USA-RedDragon/rtz-frontend"],
+            "matchUpdateTypes": ["minor", "patch", "pin", "pinDigest", "digest"],
+            "schedule": ["* 0-5 1 * *"]
         },
         {
             "matchDatasources": ["docker"],
@@ -72,9 +110,8 @@
         "jacob.pub/gcr.io": "gcr.io",
         "jacob.pub/reg.kyverno.io": "reg.kyverno.io"
     },
-    "ignorePresets": [
-        ":prHourlyLimit2"
-    ],
+    "prHourlyLimit": 4,
+    "prConcurrentLimit": 10,
     "kubernetes": {
         "enabled": true,
         "fileMatch": ["\\.ya?ml$"]
